@@ -1,0 +1,41 @@
+<!--Add Buger-->
+<div class="row">
+  <div class="col-4">
+  <form>
+    <div class="form-group">
+      <label for="burger-desc">Add New Burger</label>
+      <input type="text" class="form-control" id="burger-desc" placeholder="Ex. Cheese Burger">
+    </div>
+    <button class="btn btn-secondary" id="save">Add Burger</button>
+  </form>
+  </div>
+  <!--Existing burgers-->
+  <div class="col-4">
+    Not Eaten
+    <ul>
+    {{#each burger}}
+    {{#unless eaten}}
+      <li>{{burger_desc}}&nbsp;
+        <!--<i class="fa fa-laugh" burger-id="{{burger_id}}"></i>-->
+        <button class="btn btn-secondary eat" burger-id="{{burger_id}}">Eat</button>
+      </li>
+    {{/unless}}
+
+    {{/each}}
+    </ul>
+  </div>
+  <!--Eaten burgers-->
+  <div class="col-4">
+    Eaten
+    <ul>
+    {{#each burger}}
+    {{#if eaten}}
+      <li>{{burger_desc}}
+        <button class="btn btn-secondary delete" burger-id="{{burger_id}}">-</button>
+      </li>
+    {{/if}}
+
+    {{/each}}
+    </ul>
+  </div>
+</div>
