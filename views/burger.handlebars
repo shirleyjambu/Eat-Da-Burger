@@ -11,13 +11,13 @@
   </div>
   <!--Existing burgers-->
   <div class="col-4">
-    Not Eaten
+    Available
     <ul>
     {{#each burger}}
     {{#unless eaten}}
       <li>{{burger_desc}}&nbsp;
-        <!--<i class="fa fa-laugh" burger-id="{{burger_id}}"></i>-->
-        <button class="btn btn-secondary eat" burger-id="{{burger_id}}">Eat</button>
+        <!--<i class="fas fa-hamburger" burger-id="{{burger_id}}"></i>-->
+        <button class="btn btn-secondary eat" burger-id="{{burger_id}}"><i class="fas fa-hamburger"></i></button>
       </li>
     {{/unless}}
 
@@ -26,12 +26,12 @@
   </div>
   <!--Eaten burgers-->
   <div class="col-4">
-    Eaten
+    Devoured
     <ul>
     {{#each burger}}
     {{#if eaten}}
       <li>{{burger_desc}}
-        <button class="btn btn-secondary delete" burger-id="{{burger_id}}">-</button>
+        <button class="btn btn-secondary delete" burger-id="{{burger_id}}"><i class="fas fa-trash"></i></button>
       </li>
     {{/if}}
 
