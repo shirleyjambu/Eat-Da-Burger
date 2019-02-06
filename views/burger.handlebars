@@ -15,12 +15,8 @@
     <ul>
     {{#each burger}}
     {{#unless eaten}}
-      <li>{{burger_desc}}&nbsp;
-        <!--<i class="fas fa-hamburger" burger-id="{{burger_id}}"></i>-->
-        <button class="btn btn-secondary eat" burger-id="{{burger_id}}"><i class="fas fa-hamburger"></i></button>
-      </li>
+      {{>burger/burgerPartial eaten=false}}
     {{/unless}}
-
     {{/each}}
     </ul>
   </div>
@@ -30,11 +26,8 @@
     <ul>
     {{#each burger}}
     {{#if eaten}}
-      <li>{{burger_desc}}
-        <button class="btn btn-secondary delete" burger-id="{{burger_id}}"><i class="fas fa-trash"></i></button>
-      </li>
+      {{>burger/burgerPartial eaten=true}}
     {{/if}}
-
     {{/each}}
     </ul>
   </div>

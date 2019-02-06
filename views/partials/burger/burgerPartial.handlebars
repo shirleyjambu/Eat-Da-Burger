@@ -1,0 +1,11 @@
+<li>
+  {{burger_desc}}&nbsp;
+  {{#unless eaten}}
+        <button class="btn btn-secondary eat" burger-id="{{burger_id}}"><i class="fas fa-hamburger"></i></button>
+        <button class="btn btn-secondary delete" burger-id="{{burger_id}}"><i class="fas fa-trash"></i></button>
+  {{/unless}}
+  {{#if eaten}}
+        <button class="btn btn-secondary delete" burger-id="{{burger_id}}"><i class="fas fa-trash"></i></button>
+  {{/if}}
+        
+      </li>
