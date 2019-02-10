@@ -1,34 +1,40 @@
-<!--Add Buger-->
-<div class="row">
-  <div class="col-4">
-  <form>
-    <div class="form-group">
-      <label for="burger-desc">Add New Burger</label>
-      <input type="text" class="form-control" id="burger-desc" placeholder="Ex. Cheese Burger">
+<!-- Add Burger -->
+<div class="card-deck">
+  <div class="card">
+    <div class="card-header">Add New Burger</div>
+    <div class="card-body">
+      <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="burger-desc" placeholder="Ex. Cheese Burger">
+      </div>
+      <button class="btn myBtn" id="save"><i class="fa fa-plus"></i></button>
+    </form>
     </div>
-    <button class="btn btn-secondary" id="save">Add Burger</button>
-  </form>
   </div>
   <!--Existing burgers-->
-  <div class="col-4">
-    Available
-    <ul>
-    {{#each burger}}
-    {{#unless eaten}}
-      {{>burger/burgerPartial eaten=false}}
-    {{/unless}}
-    {{/each}}
-    </ul>
+  <div class="card">
+    <div class="card-header">At your table</div>
+    <div class="card-body">
+      
+      {{#each burger}}
+      {{#unless eaten}}
+        {{>burger/burgerPartial eaten=false}}
+      {{/unless}}
+      {{/each}}
+      
+    </div>
   </div>
-  <!--Eaten burgers-->
-  <div class="col-4">
-    Devoured
-    <ul>
-    {{#each burger}}
-    {{#if eaten}}
-      {{>burger/burgerPartial eaten=true}}
-    {{/if}}
-    {{/each}}
-    </ul>
+
+  <div class="card">
+    <div class="card-header">Devoured</div>
+    <div class="card-body">
+      
+        {{#each burger}}
+        {{#if eaten}}
+          {{>burger/burgerPartial eaten=true}}
+        {{/if}}
+        {{/each}}
+        
+    </div>
   </div>
 </div>
